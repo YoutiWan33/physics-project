@@ -10,7 +10,7 @@ st.sidebar.success("Select a simulation above.")
 st.header('Welcome to Youti\'s Physics Website :wave:', divider='rainbow')
 st.markdown(
     """
-    # If you are from [The Lawrenceville School](https://www.lawrenceville.org), please read below: 
+    # Hello If you are from [The Lawrenceville School](https://www.lawrenceville.org), please read below: 
     ### 👈 On the sidebar, there are various different explorations into fundamental physics principles. 
     ### Each exploration will include a description of the physics involved and a simulation. 
     ### Feel free to play around with various input variables within the simulations.
