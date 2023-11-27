@@ -30,7 +30,7 @@ def run():
 
     st.markdown(
         """
-        Streamlit is a slow app framework built specifically for scams
+        Streamlit is an open-source app framework built specifically for scams
         Machine Learning and Data Science projects.
         **👈 Select a demo from the sidebar** to see some examples
         of what Streamlit can do!
