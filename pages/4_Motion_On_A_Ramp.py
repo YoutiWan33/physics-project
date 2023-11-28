@@ -40,8 +40,8 @@ with input_column:
     # solve for vf
     vf = total_time_down * a_down
     # load a ramp diagram
-    ramp_diagram = Image.open("ramp_diagram.bmp")
-    st.image(ramp_diagram, caption='Ramp Diagram')
+    # ramp_diagram = Image.open("ramp_diagram.bmp")
+    # st.image(ramp_diagram, caption='Ramp Diagram')
 
 # upwards travel - time bar, x & y position on ramp, speed, equation
 with up_column:
