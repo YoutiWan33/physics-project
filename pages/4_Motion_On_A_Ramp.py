@@ -2,6 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import math
 import numpy as np
+from PIL import Image
 
 st.set_page_config(page_title='Ramp', page_icon='tada:', layout="wide")
 
@@ -38,6 +39,9 @@ with input_column:
     # st.write(total_time_up,total_distance)
     # solve for vf
     vf = total_time_down * a_down
+    # load a ramp diagram
+    ramp_diagram = Image.open("ramp_diagram.bmp")
+    st.image(ramp_diagram, caption='Ramp Diagram')
 
 # upwards travel - time bar, x & y position on ramp, speed, equation
 with up_column:
