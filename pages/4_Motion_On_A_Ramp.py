@@ -21,6 +21,8 @@ def down_calculate_motion(time):
 input_column, up_column, down_column = st.columns([1, 2, 2])
 # input
 with input_column:
+    ramp_diagram = Image.open("ramp_diagram_dis_bmp.bmp")
+    st.image(ramp_diagram, caption='Ramp Diagram')
     g = 9.81
     pi = 3.1415
     uk = input_column.number_input('Please enter value of $\\mu_k$ (kinetic friction coefficient) : ', 0.00, 1000.00, 0.10)
