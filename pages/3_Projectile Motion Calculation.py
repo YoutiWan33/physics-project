@@ -97,7 +97,7 @@ with col2:
     </style>""", unsafe_allow_html=True)
 
     button = st.button("Run Simulation for Vertical Distance (m) Vs. Horizontal Distance (m)")
-    st.success('It may take about 10 seconds to run the simulation')
+    st.success('It may take about 5 seconds to run the simulation')
 
     if button:
         g = 9.81  # m / s^2
