@@ -98,7 +98,7 @@ dis_up = - Object_initial_up_speed ** 2 / 2 / a_up
 total_t_up = -Object_initial_up_speed / a_up
 
 # animation is made of 50 frames of pictures
-step = 20
+step = 25
 t1 = np.linspace(0, total_t_up, step)
 dis_at_t1 = Object_initial_up_speed * t1 + 1 / 2 * a_up * t1 ** 2
 if ramp_angle_degree == 0:
@@ -191,7 +191,7 @@ with col2:
             if i == 0:
                 time.sleep(2)     # wait a little bit longer when loading the initial position image frame
             else:
-                time.sleep(.15)    # time between each frame of image is 0.05 second
+                time.sleep(.25)    # time between each frame of image is 0.05 second
 
         # move down animation
         if np.sin(ramp_angle_radian) > np.cos(ramp_angle_radian) * Static_Friction_Coefficient:
@@ -236,7 +236,7 @@ with col2:
                 image = Image.open("motion_on_a_ramp.bmp")
                 # load the image every 0.05 second to make a animation
                 objectmove.image(image)
-                time.sleep(.15)  # time between each frame of image is 0.05 second
+                time.sleep(.25)  # time between each frame of image is 0.05 second
 
 
 
