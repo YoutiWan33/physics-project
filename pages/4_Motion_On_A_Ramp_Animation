@@ -238,7 +238,7 @@ with col2:
 
 
 
-# object move down calculation
+# object move up and down calculation
 with col3:
     st.header('Object moving up with initial speed')
     st.text('Ramp angle = ' + str(ramp_angle_degree) + ' degrees')
