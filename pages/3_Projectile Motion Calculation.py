@@ -78,7 +78,7 @@ def update(frame):
     X_pos_text = 'X_Position: ' + str(round(x_dis[frame], 2)) + ' m'
     Y_pos_text = 'Y_Position: ' + str(round(y_dis[frame], 2)) + ' m'
     V_x_text = 'Horizontal speed: ' + str(round(V_x_int, 2)) + ' m/s'
-    V_y_text = 'Horizontal speed: ' + str(round(vertical_speed[frame], 2)) + ' m/s'
+    V_y_text = 'Vertical speed: ' + str(round(vertical_speed[frame], 2)) + ' m/s'
     graph.set_data(x_dis[:frame + 1], y_dis[:frame + 1])
     L.get_texts()[0].set_text(lab + '\n' + X_pos_text + '\n' + Y_pos_text + '\n' + V_x_text + '\n' + V_y_text)  # Update label each at frame
     return graph
