@@ -74,9 +74,11 @@ def update(frame):
         time_str = '0.0'
     else:
         time_str = str(round(t[frame], 2))
-    lab = 'Time:' + time_str + ' second'
+    lab = 'Time:' + time_str + ' seconds'
+    X_pos_text = 'X_Position: ' + str(round(x_dis[frame], 2)) + ' m'
+    Y_pos_text = 'Y_Position: ' + str(round(y_dis[frame], 2)) + ' m'
     graph.set_data(x_dis[:frame + 1], y_dis[:frame + 1])
-    L.get_texts()[0].set_text(lab)  # Update label each at frame
+    L.get_texts()[0].set_text(lab + '\n' + X_pos_text + '\n' + Y_pos_text)  # Update label each at frame
     return graph
 
 
@@ -133,8 +135,9 @@ with col2:
 
         ani = animation.FuncAnimation(fig=fig, func=update, frames=frame_par, interval=15)
         # ...... ani.save(filename="C:/Users/xiongyi/PycharmProjects/Webpage\pages/html_example.html", writer="html")
-        # show animation html
+        # convert animation to html and display
         components.html(ani.to_jshtml(), height=1000)
+
 
 
 
