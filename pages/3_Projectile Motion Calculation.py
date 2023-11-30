@@ -8,8 +8,8 @@ import time
 # ..................................Page Header Format Start.......................................................
 
 # .....This page name /str ......
-page_str = "Projectile Motion Calculation"                          # Input
-subheader_str = "" 
+page_str = "Projectile Motion Simulation"                          # Input
+subheader_str = ""                                       # Input
 
 # ...... set page title, page icon and wide screen.....
 st.set_page_config(page_title=page_str, page_icon='tada:', layout="wide")
@@ -77,8 +77,10 @@ def update(frame):
     lab = 'Time:' + time_str + ' seconds'
     X_pos_text = 'X_Position: ' + str(round(x_dis[frame], 2)) + ' m'
     Y_pos_text = 'Y_Position: ' + str(round(y_dis[frame], 2)) + ' m'
+    V_x_text = 'Horizontal speed: ' + str(round(V_x_int, 2)) + ' m/s'
+    V_y_text = 'Horizontal speed: ' + str(round(vertical_speed[frame], 2)) + ' m/s'
     graph.set_data(x_dis[:frame + 1], y_dis[:frame + 1])
-    L.get_texts()[0].set_text(lab + '\n' + X_pos_text + '\n' + Y_pos_text)  # Update label each at frame
+    L.get_texts()[0].set_text(lab + '\n' + X_pos_text + '\n' + Y_pos_text + '\n' + V_x_text + '\n' + V_y_text)  # Update label each at frame
     return graph
 
 
@@ -96,8 +98,8 @@ with col2:
         }
     </style>""", unsafe_allow_html=True)
 
-    button = st.button("Run Simulation for Vertical Distance (m) Vs. Horizontal Distance (m)")
-    st.success('It may take about 5 seconds to run the simulation')
+    button = st.button("Run Simulation for Vertical Distance (m) Vs. Time (s)")
+
 
     if button:
         g = 9.81  # m / s^2
@@ -131,8 +133,7 @@ with col2:
         st.write('Time from Highest to Ground = ', round(TimefromApextoGround, 2), 'Second')
         st.write('Total Time in the Air = ', round(TotalTime, 2), 'Second')
 
-
-
+        st.success('It may take about 10 seconds to run the simulation')
         ani = animation.FuncAnimation(fig=fig, func=update, frames=frame_par, interval=15)
         # ...... ani.save(filename="C:/Users/xiongyi/PycharmProjects/Webpage\pages/html_example.html", writer="html")
         # convert animation to html and display
