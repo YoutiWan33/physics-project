@@ -98,7 +98,7 @@ with col2:
         }
     </style>""", unsafe_allow_html=True)
 
-    button = st.button("Run Simulation for Vertical Distance (m) Vs. Time (s)")
+    button = st.button("Run Simulation")
 
 
     if button:
