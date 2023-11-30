@@ -8,8 +8,8 @@ import time
 # ..................................Page Header Format Start.......................................................
 
 # .....This page name /str ......
-page_str = "Projectile Motion Simulation"                          # Input
-subheader_str = "Abcefef"                                       # Input
+page_str = "Projectile Motion Calculation"                          # Input
+
 
 # ...... set page title, page icon and wide screen.....
 st.set_page_config(page_title=page_str, page_icon='tada:', layout="wide")
