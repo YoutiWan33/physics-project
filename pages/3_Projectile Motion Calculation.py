@@ -9,7 +9,7 @@ import time
 
 # .....This page name /str ......
 page_str = "Projectile Motion Calculation"                          # Input
-
+subheader_str = "" 
 
 # ...... set page title, page icon and wide screen.....
 st.set_page_config(page_title=page_str, page_icon='tada:', layout="wide")
