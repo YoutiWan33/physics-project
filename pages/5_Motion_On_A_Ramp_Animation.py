@@ -38,8 +38,10 @@ with (col1):
     ramp_angle_degree = st.slider('Ramp angle θ (degree): ', 10, 89, 30)   # small angle run into some accuracy, due to use round 2 or 0.01 for accurancy
     ramp_angle_radian = round(ramp_angle_degree * 3.14 / 180, 2)
     Object_initial_distance = st.number_input('Object Initial Distance D_initial (m) :', 0, 300, 100)
-    Static_Friction_Coefficient = st.number_input('Ramp Surface Static Friction Coefficient μs :', 0.00, 3.00, 0.45)
-    Kinetic_Friction_Coefficient = st.number_input('Ramp Surface Kinetic Friction Coefficient μk :', 0.00, 2.00, 0.15)
+    Static_Friction_Coefficient = st.number_input('Please enter value of $\\mu_s$ (static friction coefficient) : ', 0.00, 3.00, 0.45)
+    Kinetic_Friction_Coefficient = st.number_input('Please enter value of $\\mu_k$ (kinetic friction coefficient) : ', 0.00, 2.00, 0.15)
+
+
     a_up = - (g * np.sin(ramp_angle_radian) + g * np.cos(ramp_angle_radian) * Kinetic_Friction_Coefficient)
     if np.tan(ramp_angle_radian) >= 5 / 7:   # the screen is 800 * 600, but the ramp is only use 700 * 500, leaving 50 on each side
         dis_from_initial_to_top = 500 / np.sin(ramp_angle_radian) - Object_initial_distance
@@ -180,7 +182,7 @@ with col2:
             # Draw the moving square object
             pygame.draw.polygon(screen, object_color, square_vertices)
 
-           
+
             # Save Image
             pygame.image.save(screen, "motion_on_a_ramp.bmp")
             image = Image.open("motion_on_a_ramp.bmp")
@@ -189,7 +191,7 @@ with col2:
             if i == 0:
                 time.sleep(2)     # wait a little bit longer when loading the initial position image frame
             else:
-                time.sleep(.1)    # time between each frame of image is 0.05 second
+                time.sleep(.05)    # time between each frame of image is 0.05 second
 
         # move down animation
         if np.sin(ramp_angle_radian) > np.cos(ramp_angle_radian) * Static_Friction_Coefficient:
@@ -234,11 +236,11 @@ with col2:
                 image = Image.open("motion_on_a_ramp.bmp")
                 # load the image every 0.05 second to make a animation
                 objectmove.image(image)
-                time.sleep(.1)  # time between each frame of image is 0.05 second
+                time.sleep(.05)  # time between each frame of image is 0.05 second
 
 
 
-# object move up and down calculation
+# object move down calculation
 with col3:
     st.header('Object moving up with initial speed')
     st.text('Ramp angle = ' + str(ramp_angle_degree) + ' degrees')
