@@ -37,7 +37,7 @@ with (col1):
     st.image(ramp_diagram, caption='Ramp Diagram')
     ramp_angle_degree = st.slider('Ramp angle θ (degree): ', 10, 89, 30)   # small angle run into some accuracy, due to use round 2 or 0.01 for accurancy
     ramp_angle_radian = round(ramp_angle_degree * 3.14 / 180, 2)
-    Object_initial_distance = st.number_input('Object Initial Distance D_initial (m) :', 0, 300, 100)
+    Object_initial_distance = st.number_input('Object Initial Distance D_initial (m) :', 0, 300, 150)
     Static_Friction_Coefficient = st.number_input('Please enter value of $\\mu_s$ (static friction coefficient) : ', 0.00, 3.00, 0.45)
     Kinetic_Friction_Coefficient = st.number_input('Please enter value of $\\mu_k$ (kinetic friction coefficient) : ', 0.00, 2.00, 0.15)
 
