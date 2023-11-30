@@ -35,13 +35,12 @@ side = 25
 with (col1):
     ramp_diagram = Image.open("ramp_diagram_dis_bmp.bmp")
     st.image(ramp_diagram, caption='Ramp Diagram')
+    Kinetic_Friction_Coefficient = st.number_input('Please enter value of $\\mu_k$ (kinetic friction coefficient) : ', 0.00, 2.00, 0.15)
+    Static_Friction_Coefficient = st.number_input('Please enter value of $\\mu_s$ (static friction coefficient) : ', 0.00, 3.00, 0.45)
     ramp_angle_degree = st.slider('Ramp angle θ (degree): ', 10, 89, 30)   # small angle run into some accuracy, due to use round 2 or 0.01 for accurancy
     ramp_angle_radian = round(ramp_angle_degree * 3.14 / 180, 2)
     Object_initial_distance = st.number_input('Object Initial Distance D_initial (m) :', 0, 300, 150)
-    Static_Friction_Coefficient = st.number_input('Please enter value of $\\mu_s$ (static friction coefficient) : ', 0.00, 3.00, 0.45)
-    Kinetic_Friction_Coefficient = st.number_input('Please enter value of $\\mu_k$ (kinetic friction coefficient) : ', 0.00, 2.00, 0.15)
-
-
+        
     a_up = - (g * np.sin(ramp_angle_radian) + g * np.cos(ramp_angle_radian) * Kinetic_Friction_Coefficient)
     if np.tan(ramp_angle_radian) >= 5 / 7:   # the screen is 800 * 600, but the ramp is only use 700 * 500, leaving 50 on each side
         dis_from_initial_to_top = 500 / np.sin(ramp_angle_radian) - Object_initial_distance
