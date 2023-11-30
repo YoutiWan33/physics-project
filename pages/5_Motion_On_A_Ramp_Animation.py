@@ -27,7 +27,7 @@ blue = (0, 0, 255)
 # setup three columns, left for input, middle right for up and down motion simulation
 container = st.container()
 col1, col2, col3 = st.columns([1, 2, 2])
-g = 9.8   # g constant m/s^2
+g = 9.81   # g constant m/s^2
 # square side length is 25
 side = 25
 
@@ -98,7 +98,7 @@ dis_up = - Object_initial_up_speed ** 2 / 2 / a_up
 total_t_up = -Object_initial_up_speed / a_up
 
 # animation is made of 50 frames of pictures
-step = 50
+step = 20
 t1 = np.linspace(0, total_t_up, step)
 dis_at_t1 = Object_initial_up_speed * t1 + 1 / 2 * a_up * t1 ** 2
 if ramp_angle_degree == 0:
@@ -191,7 +191,7 @@ with col2:
             if i == 0:
                 time.sleep(2)     # wait a little bit longer when loading the initial position image frame
             else:
-                time.sleep(.05)    # time between each frame of image is 0.05 second
+                time.sleep(.2)    # time between each frame of image is 0.05 second
 
         # move down animation
         if np.sin(ramp_angle_radian) > np.cos(ramp_angle_radian) * Static_Friction_Coefficient:
@@ -236,7 +236,7 @@ with col2:
                 image = Image.open("motion_on_a_ramp.bmp")
                 # load the image every 0.05 second to make a animation
                 objectmove.image(image)
-                time.sleep(.05)  # time between each frame of image is 0.05 second
+                time.sleep(.2)  # time between each frame of image is 0.05 second
 
 
 
