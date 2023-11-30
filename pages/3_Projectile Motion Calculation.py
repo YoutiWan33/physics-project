@@ -133,9 +133,7 @@ with col2:
 
         ani = animation.FuncAnimation(fig=fig, func=update, frames=frame_par, interval=15)
         # ...... ani.save(filename="C:/Users/xiongyi/PycharmProjects/Webpage\pages/html_example.html", writer="html")
-        with st.spinner('Wait for it... It may take about 10 seconds'):
-            st.write('Please wait 5 seconds')
-        st.success('Done!')
+        # show animation html
         components.html(ani.to_jshtml(), height=1000)
 
 
