@@ -212,7 +212,7 @@ with col2:
             # load the image every 0.05 second to make a animation
             objectmove.image(image)
             if i == 0:
-                time.sleep(2)  # wait a little bit longer when loading the initial position image frame
+                time.sleep(1)  # wait a little bit longer when loading the initial position image frame
             else:
                 time.sleep(.2)  # time between each frame of image is 0.05 second
 
