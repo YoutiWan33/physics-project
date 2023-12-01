@@ -214,7 +214,7 @@ with col2:
             if i == 0:
                 time.sleep(2)  # wait a little bit longer when loading the initial position image frame
             else:
-                time.sleep(.25)  # time between each frame of image is 0.05 second
+                time.sleep(.2)  # time between each frame of image is 0.05 second
 
         # move down animation
         if np.sin(ramp_angle_radian) > np.cos(ramp_angle_radian) * Static_Friction_Coefficient:
@@ -259,7 +259,7 @@ with col2:
                 image = Image.open("motion_on_a_ramp.jpeg")
                 # load the image every 0.05 second to make a animation
                 objectmove.image(image)
-                time.sleep(.25)  # time between each frame of image is 0.05 second
+                time.sleep(.2)  # time between each frame of image is 0.05 second
 
 # object move down calculation
 with col3:
