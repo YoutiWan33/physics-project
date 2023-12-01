@@ -207,8 +207,8 @@ with col2:
             pygame.draw.polygon(screen, object_color, square_vertices)
 
             # Save Image
-            pygame.image.save(screen, "motion_on_a_ramp.bmp")
-            image = Image.open("motion_on_a_ramp.bmp")
+            pygame.image.save(screen, "motion_on_a_ramp.jpeg")
+            image = Image.open("motion_on_a_ramp.jpeg")
             # load the image every 0.05 second to make a animation
             objectmove.image(image)
             if i == 0:
@@ -255,8 +255,8 @@ with col2:
                 # Draw the moving square object
                 pygame.draw.polygon(screen, object_color, square_vertices)
                 # Save Image
-                pygame.image.save(screen, "motion_on_a_ramp.bmp")
-                image = Image.open("motion_on_a_ramp.bmp")
+                pygame.image.save(screen, "motion_on_a_ramp.jpeg")
+                image = Image.open("motion_on_a_ramp.jpeg")
                 # load the image every 0.05 second to make a animation
                 objectmove.image(image)
                 time.sleep(.25)  # time between each frame of image is 0.05 second
