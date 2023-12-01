@@ -77,7 +77,9 @@ with (Output_column):
         theta = math.acos(acos_theta)
         mag = abs(a_mag) * abs(b_mag) * math.sin(theta)
 
-        st.header("Angle between Vector A and Vector B is " + str(round(theta * 180 / np.pi, 2)) + " degrees")
+        st.subheader("Angle between Vector A and Vector B is " + str(round(theta * 180 / np.pi, 2)) + " degrees")
+        st.subheader("Angle between Vector A and Vector A X B is 90 degrees")
+        st.subheader("Angle between Vector B and Vector A X B is 90 degrees")
 
     else:
         st.header("Invalid because magnitude of Vector A or B is 0")
