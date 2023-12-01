@@ -17,10 +17,9 @@ st.markdown(
 st.latex(r'\textbf{a}'r'\times'r'\textbf{b}'r'''= (a_yb_z - a_zb_y)x̂ - (a_xb_z - a_zb_x)ŷ + (a_xb_y - a_yb_x)ẑ ''')
 st.markdown(
     """
-    These definitions return a vector quantity because the cross product has magnitude and direction. 
+    These definitions return a vector quantity because the cross product has magnitude and direction.
     ### The simulation below calculates the cross product and graphs the two input vectors. Play around!
     """)
-
 # three columns - A, B, Output (output with graph)
 A_column, B_column, Output_column = st.columns([2, 2, 6])
 
@@ -42,7 +41,7 @@ with A_column:
     ax.set_ylabel('Y axis')
     ax.set_zlabel('Z axis')
     ax.set_title('Vector A')
-    #st.write(figA)
+
 
 # B Vector
 with B_column:
@@ -62,7 +61,13 @@ with B_column:
     ax.set_ylabel('Y axis')
     ax.set_zlabel('Z axis')
     ax.set_title('Vector B')
-    #st.write(figB)
+
+
+
+# calculate vector A X B, x, y, z component
+cross_product_x = Ay * Bz - Az * By
+cross_product_y = -(Ax * Bz - Az * Bx)
+cross_product_z = Ax * By - Ay * Bx
 
 # output column
 with (Output_column):
@@ -76,7 +81,9 @@ with (Output_column):
 
         theta = math.acos(acos_theta)
         mag = abs(a_mag) * abs(b_mag) * math.sin(theta)
-
+        st.subheader("Vector A X B is :")
+        st.latex(
+            r'\vec{A}'r'\times'r'\vec{B}'fr'''= ({cross_product_x})x̂ + ({cross_product_y})ŷ + ({cross_product_z})ẑ ''')
         st.subheader("Angle between Vector A and Vector B is " + str(round(theta * 180 / np.pi, 2)) + " degrees")
         st.subheader("Angle between Vector A and Vector A X B is 90 degrees")
         st.subheader("Angle between Vector B and Vector A X B is 90 degrees")
