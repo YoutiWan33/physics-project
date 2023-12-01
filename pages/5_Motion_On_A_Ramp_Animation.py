@@ -131,9 +131,11 @@ with col2:
         color:#ff0000;
         }
     </style>""", unsafe_allow_html=True)
+    
     moving_button = st.button('Run Simulation')
-    st.success('After click the "Run Simulation", scroll down to the bottom of the screen to see animation')
+    
     objectmove = st.empty()
+    
     # draw the ramp and object with initial position
     square_vertics_1_x = square_initial_1_x - dis_at_t1[0] * np.cos(ramp_angle_radian)
     square_vertics_1_y = square_initial_1_y - dis_at_t1[0] * np.sin(ramp_angle_radian)
@@ -178,8 +180,9 @@ with col2:
                    scroll({len(st.session_state.chat)})
                </script>
                """
-
+        # scroll down to the bottom of the screen by calling above js 
         st.components.v1.html(js)
+        
         # move up animation
         for i in range(step):
             # moving up
