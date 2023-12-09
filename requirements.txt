@@ -1,4 +1,4 @@
-opencv-contrib-python-headless
+opencv-python-headless
 altair==5.1.2
 animation==0.0.7
 asgiref==3.7.2
