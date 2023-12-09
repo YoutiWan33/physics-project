@@ -41,7 +41,6 @@ matplotlib==3.8.2
 mdit-py-plugins==0.4.0
 mdurl==0.1.2
 numpy==1.26.2
-opencv-python==4.8.1.78
 opencv-python-headless==4.8.1.78
 packaging==23.2
 pandas==2.1.3
