@@ -68,6 +68,9 @@ blue = (0, 0, 255)
 # video output avi and mp4 name
 output_video_path_avi = "output.avi"
 output_video_path_mp4 = "output.mp4"
+folder_name = "images"
+if not os.path.exists(folder_name):
+    os.mkdir(folder_name)
 
 # setup three columns, left for input, middle right for up and down motion simulation
 container = st.container()
@@ -206,7 +209,7 @@ with col2:
 
     # Save initial Images number_of_still_images times, so the images generated video can have enough time to show
     # initial object position well, 00.jpeg, 01.jpeg..... are all initial position image
-    folder_name = "images"
+
     number_of_still_images = 12
     for i in range(number_of_still_images):
         if i <= 9:
@@ -344,7 +347,6 @@ with col2:
 
             # Check if there are images in the folder
             if images:
-
 
                 # Convert images to AVI video
                 convert_images_to_video(images, output_video_path_avi)
