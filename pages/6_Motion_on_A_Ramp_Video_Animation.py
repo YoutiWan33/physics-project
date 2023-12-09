@@ -350,8 +350,7 @@ with col2:
 
                 # Convert images to AVI video
                 convert_images_to_video(images, output_video_path_avi)
-                st.video(output_video_path_avi)
-                
+                                
                 # Convert AVI to MP4 using FFmpeg
                 convert_avi_to_mp4(output_video_path_avi, output_video_path_mp4)
 
