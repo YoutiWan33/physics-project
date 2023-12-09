@@ -2,7 +2,6 @@ import streamlit.components.v1 as components
 import pygame
 import cv2
 import os
-import moviepy.editor as moviepy
 import streamlit as st
 from PIL import Image
 import numpy as np
