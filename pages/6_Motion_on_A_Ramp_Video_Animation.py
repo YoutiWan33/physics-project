@@ -33,7 +33,7 @@ def convert_images_to_video(images, output_video_path, fps=20):
     for img in images:
         video.write(img)
 
-    cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
     video.release()
 
 
