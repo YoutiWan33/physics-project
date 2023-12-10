@@ -239,25 +239,25 @@ with ((col2)):
     objectmove.image(image)
 
     if moving_button:
-        if output_video_path_mp4:
-            remove_file(output_video_path_mp4)
-        # due to screen rendering, after click "run simulation", automaticlaly scroll down to the bottom of the screen
-        st.session_state.chat = "Object Initial Moving Up Speed V_initial (m/s) :"
-        # Define the scroll operation as a function and pass in something unique for each
-        # page load that it needs to re-evaluate where "bottom" is
-        js = f"""
-               <script>
-                   function scroll(dummy_var_to_force_repeat_execution){{
-                       var textAreas = parent.document.querySelectorAll('section.main');
-                       for (let index = 0; index < textAreas.length; index++) {{
-                           textAreas[index].style.color = 'red'
-                           textAreas[index].scrollTop = textAreas[index].scrollHeight;
-                       }}
-                   }}
-                   scroll({len(st.session_state.chat)})
-               </script>
-               """
-        st.components.v1.html(js)
+        # if output_video_path_mp4:
+        #     remove_file(output_video_path_mp4)
+        # # due to screen rendering, after click "run simulation", automaticlaly scroll down to the bottom of the screen
+        # st.session_state.chat = "Object Initial Moving Up Speed V_initial (m/s) :"
+        # # Define the scroll operation as a function and pass in something unique for each
+        # # page load that it needs to re-evaluate where "bottom" is
+        # js = f"""
+        #        <script>
+        #            function scroll(dummy_var_to_force_repeat_execution){{
+        #                var textAreas = parent.document.querySelectorAll('section.main');
+        #                for (let index = 0; index < textAreas.length; index++) {{
+        #                    textAreas[index].style.color = 'red'
+        #                    textAreas[index].scrollTop = textAreas[index].scrollHeight;
+        #                }}
+        #            }}
+        #            scroll({len(st.session_state.chat)})
+        #        </script>
+        #        """
+        # st.components.v1.html(js)
 
         # move up animation
         for i in range(step_up):
