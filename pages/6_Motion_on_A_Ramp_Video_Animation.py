@@ -168,7 +168,7 @@ else:
     square_initial_1_y = ramp_vertics_1_y - Object_initial_distance * np.sin(ramp_angle_radian)
 
 # object move up calculation
-with col2:
+with ((col2)):
     # define "Run simulation" Button style
     st.markdown("""
     <style>
@@ -206,6 +206,21 @@ with col2:
     pygame.draw.polygon(screen, triangle_color, ramp_vertices)
     # Draw the moving square object
     pygame.draw.polygon(screen, object_color, square_vertices)
+    # Set up font
+    font_size = 24
+    font = pygame.font.Font(None, font_size)
+    # Set up text
+    text = f"\u03BC" + "_k = " + str(Kinetic_Friction_Coefficient) + ", " + f"\u03BC" + "_s = " + str(Static_Friction_Coefficient) + ", θ = " + str(ramp_angle_degree) + "°, " + "V_ini = " + str(Object_initial_up_speed) + " m/s, " + "D_ini = " + str(Object_initial_distance) + " m"
+    # text color is black
+    text_color = (0, 0, 0)
+    # Render text
+    text_surface = font.render(text, True, text_color)
+    # Get text rectangle
+    text_rect = text_surface.get_rect()
+    # Set the position of the text
+    text_rect.bottomleft = (20, ramp_vertics_2_y - 10)
+    # Blit the text onto the screen
+    screen.blit(text_surface, text_rect)
 
     # Save initial Images number_of_still_images times, so the images generated video can have enough time to show
     # initial object position well, 00.jpeg, 01.jpeg..... are all initial position image
@@ -270,6 +285,23 @@ with col2:
             # Draw the moving square object
             pygame.draw.polygon(screen, object_color, square_vertices)
             # if object stuck on the top of the ramp, add "Stuck" on Pygame screen
+            font_size = 24
+            font = pygame.font.Font(None, font_size)
+            # Set up text
+            text = f"\u03BC" + "_k = " + str(Kinetic_Friction_Coefficient) + ", " + f"\u03BC" + "_s = " + str(
+                Static_Friction_Coefficient) + ", θ = " + str(ramp_angle_degree) + "°, " + "V_ini = " + str(
+                Object_initial_up_speed) + " m/s, " + "D_ini = " + str(Object_initial_distance) + " m"
+            # text color is black
+            text_color = (0, 0, 0)
+            # Render text
+            text_surface = font.render(text, True, text_color)
+            # Get text rectangle
+            text_rect = text_surface.get_rect()
+            # Set the position of the text
+            text_rect.bottomleft = (20, ramp_vertics_2_y - 10)
+            # Blit the text onto the screen
+            screen.blit(text_surface, text_rect)
+
             if np.sin(ramp_angle_radian) <= np.cos(ramp_angle_radian) * Static_Friction_Coefficient:
                 if i == step_up - 1:
                     # Set up font
@@ -285,6 +317,23 @@ with col2:
                     text_rect = text_surface.get_rect()
                     # Set the position of the text
                     text_rect.topleft = (square_vertics_4_x + 20, square_vertics_4_y - 20)
+                    # Blit the text onto the screen
+                    screen.blit(text_surface, text_rect)
+
+                    font_size = 24
+                    font = pygame.font.Font(None, font_size)
+                    # Set up text
+                    text = f"\u03BC" + "_k = " + str(Kinetic_Friction_Coefficient) + ", " + f"\u03BC" + "_s = " + str(
+                        Static_Friction_Coefficient) + ", θ = " + str(ramp_angle_degree) + "°, " + "V_ini = " + str(
+                        Object_initial_up_speed) + " m/s, " + "D_ini = " + str(Object_initial_distance) + " m"
+                    # text color is black
+                    text_color = (0, 0, 0)
+                    # Render text
+                    text_surface = font.render(text, True, text_color)
+                    # Get text rectangle
+                    text_rect = text_surface.get_rect()
+                    # Set the position of the text
+                    text_rect.bottomleft = (20, ramp_vertics_2_y - 10)
                     # Blit the text onto the screen
                     screen.blit(text_surface, text_rect)
 
@@ -332,6 +381,23 @@ with col2:
                 pygame.draw.polygon(screen, triangle_color, ramp_vertices)
                 # Draw the moving square object
                 pygame.draw.polygon(screen, object_color, square_vertices)
+                font_size = 24
+                font = pygame.font.Font(None, font_size)
+                # Set up text
+                text = f"\u03BC" + "_k = " + str(Kinetic_Friction_Coefficient) + ", " + f"\u03BC" + "_s = " + str(
+                    Static_Friction_Coefficient) + ", θ = " + str(ramp_angle_degree) + "°, " + "V_ini = " + str(
+                    Object_initial_up_speed) + " m/s, " + "D_ini = " + str(Object_initial_distance) + " m"
+                # text color is black
+                text_color = (0, 0, 0)
+                # Render text
+                text_surface = font.render(text, True, text_color)
+                # Get text rectangle
+                text_rect = text_surface.get_rect()
+                # Set the position of the text
+                text_rect.bottomleft = (20, ramp_vertics_2_y - 10)
+                # Blit the text onto the screen
+                screen.blit(text_surface, text_rect)
+
                 # Save Image   35.jpeg, 36.jpeg.....
                 folder_name = "images"
                 image_name = "motion_on_a_ramp_" + str(i + number_of_still_images + step_down) + ".jpeg"
