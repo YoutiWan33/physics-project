@@ -17,6 +17,7 @@ cycler==0.12.1
 data==0.4
 decorator==5.1.1
 Django==4.2.7
+ffmpeg-python==0.2.0
 fonttools==4.45.0
 funcsigs==1.0.2
 future==0.18.3
