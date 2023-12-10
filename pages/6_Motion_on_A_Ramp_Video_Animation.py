@@ -432,7 +432,7 @@ with ((col2)):
                         file_name="animation.avi",
                         mime="avi"
                     )
-                st.success("The animation video is a avi file, ~1MB. Please download to watch.")
+                st.success("The animation video is a avi file, ~1MB. Please download and use Mac QuickTime Player or Windows MediaPlayer to watch.")
                 for filename in os.listdir(folder_path):
                     img_path = os.path.join(folder_path, filename)
                     remove_file(img_path)
