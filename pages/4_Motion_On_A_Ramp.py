@@ -26,7 +26,7 @@ with input_column:
     g = 9.81
     pi = 3.1415
     uk = input_column.number_input('Please enter value of $\\mu_k$ (kinetic friction coefficient) : ', 0.00, 1000.00, 0.10)
-    us = input_column.number_input('Please enter value of $\\mu_s$ (static friction coefficient) : ', 0.00, 1000.00, 0.20)
+    us = input_column.number_input('Please enter value of $\\mu_s$ (static friction coefficient) : ', 0.00, 1000.00, 0.30)
     vi = input_column.number_input('Please enter value of $v_i$ (m/s) : ', 0, 1000000000, 10)
     theta_degrees = input_column.slider('Please enter value of $\\theta$ (in degrees) : ', 0, 90, 45)
     h = input_column.number_input('Please enter value of initial distance (m) : ', 0, 1000000000, 10)
