@@ -104,7 +104,7 @@ with (col1):
     # max V to avoid object move out of the screen
     v_initial_max = round(np.sqrt(-2 * a_up * (dis_from_initial_to_top - side)), 1)
     # set initial v = Vmax / 2
-    half_v_initial_max = round(v_initial_max / 2, 1)
+    half_v_initial_max = round(v_initial_max / 1.2, 1)
     Object_initial_up_speed = st.number_input('Object Initial Moving Up Speed V_initial (m/s) :', 0.0, v_initial_max,
                                               half_v_initial_max)
 
