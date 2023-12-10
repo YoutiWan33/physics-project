@@ -33,7 +33,7 @@ def convert_images_to_video(images, output_video_path, fps=20):
     for img in images:
         video.write(img)
 
-    # cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
     video.release()
 
 
@@ -182,7 +182,7 @@ with col2:
         }
     </style>""", unsafe_allow_html=True)
     moving_button = st.button('Run Simulation')
-    st.success('After click the "Run Simulation", scroll down to the bottom of the screen to see animation')
+    # st.success('After click the "Run Simulation", scroll down to the bottom of the screen to see animation')
     objectmove = st.empty()
 
     # draw the ramp and object with initial position
@@ -350,15 +350,22 @@ with col2:
 
                 # Convert images to AVI video
                 convert_images_to_video(images, output_video_path_avi)
-                                
+
                 # Convert AVI to MP4 using FFmpeg
-                convert_avi_to_mp4(output_video_path_avi, output_video_path_mp4)
+                # convert_avi_to_mp4(output_video_path_avi, output_video_path_mp4)
 
                 # Display the video using Streamlit
-                st.video(output_video_path_mp4)
+                # st.video(output_video_path_mp4)
 
                 # Cleanup: Remove the temporary AVI file
-                remove_file(output_video_path_avi)
+                # remove_file(output_video_path_avi)
+                with open(output_video_path_avi, "rb") as file:
+                    btn = st.download_button(
+                        label="Download Animation Video",
+                        data=file,
+                        file_name="animation.avi",
+                        mime="avi"
+                    )
                 for filename in os.listdir(folder_path):
                     img_path = os.path.join(folder_path, filename)
                     remove_file(img_path)
