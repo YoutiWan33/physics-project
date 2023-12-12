@@ -39,7 +39,11 @@ def convert_images_to_video(images, output_video_path, fps=20):
 
 # Function to convert AVI to MP4 using FFmpeg
 def convert_avi_to_mp4(input_avi_path, output_mp4_path):
-    ffmpeg.input(input_avi_path).output(output_mp4_path).run()
+    (
+        ffmpeg.input(input_avi_path)
+        .output(output_mp4_path)
+        .run()
+    )
 
 
 # Function to remove a file
@@ -170,7 +174,7 @@ else:
     square_initial_1_y = ramp_vertics_1_y - Object_initial_distance * np.sin(ramp_angle_radian)
 
 # object move up calculation
-with ((col2)):
+with col2:
     # define "Run simulation" Button style
     st.markdown("""
     <style>
@@ -183,7 +187,7 @@ with ((col2)):
         color:#ff0000;
         }
     </style>""", unsafe_allow_html=True)
-    moving_button = st.button('Run Simulation for a Object Motion on a Ramp')
+    moving_button = st.button('Run Simulation')
     # st.success('After click the "Run Simulation", scroll down to the bottom of the screen to see animation')
     objectmove = st.empty()
 
@@ -419,22 +423,26 @@ with ((col2)):
                 # Convert images to AVI video
                 convert_images_to_video(images, output_video_path_avi)
 
+                # if mp4 exists, delete
+                if output_video_path_mp4 in os.listdir():
+                    remove_file(output_video_path_mp4)
+
                 # Convert AVI to MP4 using FFmpeg
-                # convert_avi_to_mp4(output_video_path_avi, output_video_path_mp4)
+                convert_avi_to_mp4(output_video_path_avi, output_video_path_mp4)
 
                 # Display the video using Streamlit
-                # st.video(output_video_path_mp4)
+                st.video(output_video_path_mp4)
 
                 # Cleanup: Remove the temporary AVI file
                 # remove_file(output_video_path_avi)
-                with open(output_video_path_avi, "rb") as file:
-                    btn = st.download_button(
-                        label="Download Animation Video",
-                        data=file,
-                        file_name="animation.avi",
-                        mime="avi"
-                    )
-                st.success("The animation video is a avi file, ~1MB. Please download and use Mac QuickTime Player or Windows MediaPlayer to watch.")
+                # with open(output_video_path_avi, "rb") as file:
+                #     btn = st.download_button(
+                #         label="Download Animation Video",
+                #         data=file,
+                #         file_name="animation.avi",
+                #         mime="avi"
+                #     )
+                # st.success("The animation video is a avi file. Please download to watch.")
                 for filename in os.listdir(folder_path):
                     img_path = os.path.join(folder_path, filename)
                     remove_file(img_path)
