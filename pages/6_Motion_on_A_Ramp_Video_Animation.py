@@ -111,8 +111,8 @@ with (col1):
     half_v_initial_max = round(v_initial_max / 1.2, 1)
     Object_initial_up_speed = st.number_input('Object Initial Moving Up Speed V_initial (m/s) :', 0.0, v_initial_max,
                                               half_v_initial_max)
-    st.write("Animation Demo Example")
-    st.video("Animation Demo.mp4")
+    # st.write("Animation Demo Example")
+    # st.video("Animation Demo.mp4")
 
 # Set up Ramp vertices
 # 1 is the ramp point, bottom/lower right point
