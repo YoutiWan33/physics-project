@@ -164,10 +164,10 @@ with (output_column):
         reflection_end = (400 + np.sin(incident_angle_radian) * 300,300 - np.cos(incident_angle_radian) * 300)
 
     draw_arrow_line(screen, blue, incident_start, incident_end)
+    draw_arrow_line(screen, green, reflection_start, reflection_end)
 
     if n_value_1 * np.sin(incident_angle_radian) / n_value_2 <= 1:
         draw_arrow_line(screen, red, refraction_start, refraction_end)
-        draw_arrow_line(screen, green, reflection_start, reflection_end)
 
     image_name = "light reflection and refraction.jpeg"
     pygame.image.save(screen, image_name)
