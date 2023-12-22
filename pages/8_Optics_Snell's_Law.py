@@ -126,8 +126,8 @@ with (output_column):
     font_size = 55
     font = pygame.font.Font(None, font_size)
     # Set up text
-    text1 = "n1"
-    text2 = "n2"
+    text1 = "n1: " + selected_option_1
+    text2 = "n2: " + selected_option_2
     # text color is black
     text_color = (0, 0, 0)
     # Render text
