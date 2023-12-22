@@ -99,11 +99,11 @@ with (output_column):
     incident_angle_radian = incident_angle * np.pi / 180
     if n_value_1 * np.sin(incident_angle_radian) / n_value_2 > 1:
         st.markdown('No Refraction. Only Reflection')
-    else:
-        refraction_angle_radian = np.arcsin(n_value_1 * np.sin(incident_angle_radian) / n_value_2)
-        refraction_angle = refraction_angle_radian * 180 / np.pi
-        refraction_angle = round(refraction_angle,2)
-        st.markdown('Refraction Angle (degrees): ' + str(refraction_angle))
+
+    refraction_angle_radian = np.arcsin(n_value_1 * np.sin(incident_angle_radian) / n_value_2)
+    refraction_angle = refraction_angle_radian * 180 / np.pi
+    refraction_angle = round(refraction_angle,2)
+    st.markdown('Refraction Angle (degrees): ' + str(refraction_angle))
 
     # Initialize Pygame
     pygame.init()
