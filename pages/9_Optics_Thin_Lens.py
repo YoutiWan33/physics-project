@@ -77,58 +77,64 @@ with col1:
 
     # Display the Thin Lens Equation
     st.latex(thin_lens_equation)
-    st.latex(r"f:\ Thin\ lens\ focal\ length,\ f\ is\ positive\ for\ convex\ lens,\ negative\ for\ concave\ lens.")
-    st.latex(r"{d_o}:\ Distance\ from\ object\ to\ lens,\ {d_o}\ is\ always\ positive.")
-    st.latex(r"{d_i}:\ Distance\ from\ image\ to\ lens,\ {d_i}\ is\ positive\ for\ real\ image\
-     (opposite\ side\ of\ the\ object),")
-    st.latex(r"\ \ \ \ \ \ \ \ {d_i}\ is\ negative\ for\ virtual\ image\ (where\ the\ image\ is\ on\ the\
-      same\ side\ of\ object).")
+    st.markdown(r"$f$: **Thin lens focal length**, $f$ is positive for convex lens, $f$ is negative for concave lens")
+    st.markdown(r"$d_o$: **Distance from object to lens**, $d_o$ is always positive")
+    st.markdown(r"$d_i$: **Distance from image to lens**, $d_i$ is positive for real image (opposite side of the object), $d_i$ is negative for virtual image (same side of object)")
 
+    # st.latex(r"f:\ Thin\ lens\ focal\ length,\ f\ is\ positive\ for\ convex\ lens,\ negative\ for\ concave\ lens.")
+    # st.latex(r"{d_o}:\ Distance\ from\ object\ to\ lens,\ {d_o}\ is\ always\ positive.")
+    # st.latex(r"{d_i}:\ Distance\ from\ image\ to\ lens,\ {d_i}\ is\ positive\ for\ real\ image\
+    #  (opposite\ side\ of\ the\ object),")
+    # st.latex(r"\ \ \ \ \ \ \ \ {d_i}\ is\ negative\ for\ virtual\ image\ (where\ the\ image\ is\ on\ the\
+    #   same\ side\ of\ object).")
 
 with col3:
-    focal_length = 130
-    option = st.selectbox('Choose Distance from Object to Lens?', ('0.6f', 'f', '1.25f', '1.5f', '1.75f', '2f', '3f',
+    focal_length = st.number_input(r'Please enter value of $f$ (thin lens focal length) : ', 0, 1000, 130)
+    d_o = st.selectbox('Choose Distance from Object to Lens:', ('0.6f', 'f', '1.25f', '1.5f', '1.75f', '2f', '3f',
                                                                    '4f', '5f'))
 
-    st.subheader("The Convex Thin Lens has focal length of f")
-    st.subheader("Distance from Object to Lens is " + option)
+    st.subheader(f"The Convex Thin Lens has focal length of {focal_length}")
+    st.subheader("Distance from Object to Lens is " + d_o)
 
-    if option == "0.6f":
+    if d_o == "0.6f":
         object_to_lens = 0.6 * focal_length
-        image_to_lens = 1 / (1 / focal_length - 1 / object_to_lens)
-        image_to_lens_f = round(-image_to_lens / focal_length, 2)    # add "-" in the front to get a positive number
+        d_i = 1 / (1 / focal_length - 1 / object_to_lens)
+        image_to_lens_f = round(-d_i / focal_length, 2)    # add "-" in the front to get a positive number
         image_to_lens_f_str = str(image_to_lens_f)
-        st.subheader("Image forms at the same side of object")
+        m_value = round(-d_i / object_to_lens, 2)
         st.subheader("Distance from Image to Lens is " + image_to_lens_f_str + "f")
-        st.subheader("Image Height to Object Height Ratio is " + str(round(-image_to_lens / object_to_lens, 2)))
+        st.subheader("Image Height to Object Height Ratio (M-value) is " + str(m_value))
+        st.subheader("Image forms at the same side of object")
 
-    elif option == 'f':
+    elif d_o == 'f':
         object_to_lens = focal_length
         st.subheader("Image forms at infinity")
     else:
-        if option == "1.25f":
+        if d_o == "1.25f":
             object_to_lens = 1.25 * focal_length
-        elif option == "1.5f":
+        elif d_o == "1.5f":
             object_to_lens = 1.5 * focal_length
-        elif option == "1.75f":
+        elif d_o == "1.75f":
             object_to_lens = 1.75 * focal_length
-        elif option == "2f":
+        elif d_o == "2f":
             object_to_lens = 2 * focal_length
 
-        elif option == "3f":
+        elif d_o == "3f":
             object_to_lens = 3 * focal_length
 
-        elif option == "4f":
+        elif d_o == "4f":
             object_to_lens = 4 * focal_length
 
-        elif option == "5f":
+        elif d_o == "5f":
             object_to_lens = 5 * focal_length
 
-        image_to_lens = 1 / (1/focal_length - 1/object_to_lens)
-        image_to_lens_f = round(image_to_lens / focal_length, 2)
+        d_i = 1 / (1 / focal_length - 1 / object_to_lens)
+        image_to_lens_f = round(d_i / focal_length, 2)
         image_to_lens_f_str = str(image_to_lens_f)
+        m_value = round(-d_i / object_to_lens, 2)
         st.subheader("Distance from Image to Lens is " + image_to_lens_f_str + "f")
-        st.subheader("Image Height to Object Height Ratio is " + str(round(image_to_lens / object_to_lens, 2)))
+        st.subheader("Image Height to Object Height Ratio is " + str(m_value))
+        st.subheader("Image forms on opposite side of object")
 
     # Initialize Pygame
     pygame.init()
@@ -198,8 +204,8 @@ with col3:
     draw_candle(screen, width / 2 - object_to_lens, 0)
 
     # Draw image candle
-    if option != "f":
-        draw_candle(screen, width / 2 + image_to_lens,  image_to_lens / object_to_lens)
+    if d_o != "f":
+        draw_candle(screen, width / 2 + d_i, d_i / object_to_lens)
 
     # Draw light propagation rays
 
@@ -244,15 +250,13 @@ with col3:
     pygame.draw.line(screen, black, start_point4, end_point4, 4)
 
     # add dash line for virtual image
-    if option == "0.6f":
+    if d_o == "0.6f":
         start_point1 = (width / 2 - object_to_lens, height / 2 - object_height)
-        end_point1 = (width / 2 + image_to_lens, height / 2 + object_height * image_to_lens / object_to_lens)
+        end_point1 = (width / 2 + d_i, height / 2 + object_height * d_i / object_to_lens)
         draw_dashed_line(screen, black, start_point1, end_point1, 4)
         start_point2 = (width / 2, height / 2 - object_height)
         end_point2 = end_point1
         draw_dashed_line(screen, black, start_point2, end_point2, 4)
-
-
 
     image_name = "Thin Convex Lens.jpeg"
     pygame.image.save(screen, image_name)
