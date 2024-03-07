@@ -179,7 +179,7 @@ with input_column:
 
 with math_column:
     st.header('Force Analysis and Equation of Motion')
-    st.image("Pendulum force analysis.jpg")
+    st.image("Pendulum force analysis.JPG")
     st.latex(r'Component\ of\ the\ gravitational\ force\ along\ the\ tangential\ direction')
     st.latex(r'F = ma_t = -mg\sin(\theta)')
     st.latex(r'a_t = -g \sin(\theta)')
