@@ -18,7 +18,7 @@ st.markdown(
     # Who am I?
     ### I am currently a Junior (IV-Form) at [The Lawrenceville School](https://www.lawrenceville.org) in Lawrenceville, NJ.
     ### I’m a physics student --- currently taking Honors Physics / Mechanics and Theory with Dr. Voss. I look forward to studying physics in college.
-    ### I'm a wrestler --- 3-year varsity wrestler & 2x National Prep Qualifier. More importantly, I'm a student of the sport, seeking to fully understand moves rather than just doing them.
+    ### I'm a wrestler --- 3-year varsity wrestler & 3x National Prep Qualifier. More importantly, I'm a student of the sport, seeking to fully understand moves rather than just doing them.
     
     # Additional information (for coding nerds):
     ### This website is made with Streamlit and Python. 
