@@ -177,7 +177,7 @@ with input_column:
 
 
 
-with math_column:
+with simulation_column:
     st.header('Force Analysis and Equation of Motion')
     st.image("Pendulum force analysis.JPG")
     st.latex(r'Component\ of\ the\ gravitational\ force\ along\ the\ tangential\ direction')
@@ -198,7 +198,8 @@ with math_column:
     st.latex(r'so\ the\ solution\ is\ :')
     st.latex(r'\boxed{\theta(t) = \theta_0 \cos\left(\sqrt{\frac{g}{L}} t\right)}')
 
-with simulation_column:
+
+with math_column:
     # define "Run simulation" Button style
     st.markdown("""
        <style>
