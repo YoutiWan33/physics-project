@@ -16,7 +16,7 @@ st.markdown(
     ### Feel free to play around with various input variables within the simulations.
     
     # Who am I?
-    ### I am currently a Junior (IV-Form) at [The Lawrenceville School](https://www.lawrenceville.org) in Lawrenceville, NJ.
+    ### I am currently a Senior (V-Form) at [The Lawrenceville School](https://www.lawrenceville.org) in Lawrenceville, NJ.
     ### I’m a physics student --- currently taking Honors Physics / Mechanics and Theory with Dr. Voss. I look forward to studying physics in college.
     ### I'm a wrestler --- 3-year varsity wrestler & 3x National Prep Qualifier. More importantly, I'm a student of the sport, seeking to fully understand moves rather than just doing them.
     
